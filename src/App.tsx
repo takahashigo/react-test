@@ -2,6 +2,30 @@ import React from 'react';
 import logo from './logo.svg';
 import { Counter } from './features/counter/Counter';
 import './App.css';
+import RenderInput from './components/renderInput/RenderInput';
+import FrameworkList from './components/frameworkList/FrameworkList';
+import MockServer from './components/mockServer/MockServer';
+import Redux from './components/redux/Redux';
+import ReduxAsync from './components/reduxAsync/ReduxAsync';
+import CustomHooks from './components/CustomHooks';
+
+export const output = (text: string) => {
+  console.log(text);
+};
+const data = [
+  {
+    id: 1,
+    item: 'React',
+  },
+  {
+    id: 2,
+    item: 'Angular',
+  },
+  {
+    id: 3,
+    item: 'Vue',
+  },
+];
 
 function App() {
   return (
@@ -9,6 +33,12 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <Counter />
+        <RenderInput outputConsole={output} />
+        <FrameworkList data={data} />
+        <MockServer />
+        <Redux />
+        <ReduxAsync />
+        <CustomHooks />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
